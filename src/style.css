@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Basic styles begin*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Josefin Sans', sans-serif;
+    --bgcolor-dark-mode: hsl(235, 21%, 11%);
+    --bgcolor-light-mode: hsl(0, 0%, 98%);
+    --icon-both-node: hsl(0, 0%, 98%);
+    --bg-form-todolist-dashboard-dark-mode: hsl(235, 24%, 19%);
+    --bg-form-todolist-dashboard-light-mode: hsl(236, 33%, 92%);
+    --text-form-todolist-dark-mode: hsl(234, 39%, 85%);
+    --striketext-todolist-dark-mode: hsl(234, 11%, 52%);
+    --text-form-todolist-light-mode: hsl(233, 11%, 84%);
+    --striketext-todolist-dark-mode: hsl(236, 9%, 61%);
+    --text-dashboard-dark-mode: hsl(234, 11%, 52%);
+    --text-dashboard-light-mode: hsl(236, 9%, 61%); 
+    --text-hover-dashboard-dark-mode: hsl(236, 33%, 92%);
+    --text-hover-dashboard-light-mode: hsl(235, 19%, 35%);
+    --text-active-dashboard-both-mode: hsl(220, 98%, 61%);
+    --text-note-dark-mode: hsl(234, 11%, 52%);
+    --text-note-light-mode: hsl(236, 9%, 61%);
+}
+/* Basic styles end*/
