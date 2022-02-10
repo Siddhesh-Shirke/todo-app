@@ -10,7 +10,11 @@ export default function Main(){
                    name="" 
                    value=""
             />
-            {TodoItem}
+
+            {/* {TodoItem} */}
+
+            <TodoItem /> {/* This is a temporary line added, so that, TodoItem is visible for styling */}
+            
             <DashBoard />
             <p className="main--note">
                 Drag and drop to reorder list
