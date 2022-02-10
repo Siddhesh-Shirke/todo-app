@@ -68,17 +68,61 @@ nav{
 /* Navbar styles end */
 
 /* Main styles start */
+
+/* input styles start */
 .main input{
     width: 100%;
     padding: 2.5vh;
     border: 0;
     border-radius: 2.5px;
     background-color: var(--bg-form-todolist-dashboard-dark-mode);
-    color: var(--text-form-todolist-dark-mode);
-    letter-spacing: 0.20vw;
+    /* color: var(--text-form-todolist-dark-mode); */
+    letter-spacing: 0.225vh;
     word-spacing: 0.25vw;
     margin-bottom: 3vh;
 }
+/* input styles end */
+
+/* TodoItem styles start */
+.todo--item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh;
+    border-bottom: 1px solid var(--text-hover-dashboard-light-mode);
+    background-color: var(--bg-form-todolist-dashboard-dark-mode);
+}
+
+.todo--item--info{
+    display: flex;
+    align-items: center;
+}
+
+.todo--complete-check{
+    width: 2.5vh;
+    height: 2.5vh;
+    border-radius: 50%;
+    border: 1px solid var(--text-hover-dashboard-light-mode);
+    margin-right: 1vw;
+}
+
+.todo--item--text{
+    color: var(--text-form-todolist-dark-mode);
+    font-size: 2.5vh;
+    font-weight: 400;
+    letter-spacing: 0.225vh;
+}
+
+.cross{
+    display: none;
+}
+
+.todo--item:hover .cross{    
+    display: inline;
+}
+/* TodoItem styles end */
+
+
 /* Main styles end */
 
 

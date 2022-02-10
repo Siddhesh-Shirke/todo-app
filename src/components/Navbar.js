@@ -6,7 +6,7 @@ export default function Navbar(){
     return(
         <nav>
             <p className="nav--title">TODO</p>
-            <img src={sun} className="nav--mode--icon" alt="modes toggler clickable image"/>
+            <img src={sun} className="nav--mode--icon" alt="modes toggler clickable"/>
         </nav>
     )
 }
