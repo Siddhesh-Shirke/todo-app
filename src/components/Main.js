@@ -4,7 +4,7 @@ import DashBoard from "./DashBoard"
 
 export default function Main(){
     return(
-        <div className="container">
+        <div className="main">
             <input type="text" 
                    placeholder="Create a new todo..."
                    name="" 
