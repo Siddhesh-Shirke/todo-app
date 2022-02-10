@@ -43,8 +43,30 @@ body{
     top: 12.5%;
     left: 50%;
     transform: translateX(-40%);
+    width: 35%;
 }
 /* Basic styles end*/
+
+/* Navbar styles start */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.nav--title{
+    font-size: 5.25vh;
+    font-weight: 700;
+    letter-spacing: 1.25vw;
+    color: var(--text-form-todolist-dark-mode);
+}
+
+.nav--mode--icon{
+    height: 3.5vh;
+}
+/* Navbar styles end */
+
 
 
 
