@@ -135,6 +135,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 2.5vh;
+    margin-bottom: 6.5vh;
     background-color: var(--bg-form-todolist-dashboard-dark-mode);
     font-size: 1vw;
     font-weight: 700;
@@ -161,6 +162,14 @@ nav{
     color: var(--text-active-dashboard-both-mode);
 }
 /* Dashboard styles end */
+
+/* Note styles start */
+.main--note{
+    text-align: center;
+    font-size: 1vw;
+    color: var(--text-dashboard-dark-mode);
+}
+/* Note styles begin */
 
 
 /* Main styles end */
