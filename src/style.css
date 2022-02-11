@@ -74,7 +74,7 @@ nav{
     width: 100%;
     padding: 2.5vh;
     border: 0;
-    border-radius: 2.5px;
+    border-radius: 3px;
     background-color: var(--bg-form-todolist-dashboard-dark-mode);
     /* color: var(--text-form-todolist-dark-mode); */
     letter-spacing: 0.225vh;
@@ -84,6 +84,11 @@ nav{
 /* input styles end */
 
 /* TodoItem styles start */
+.main :nth-child(2){
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 .todo--item{
     display: flex;
     align-items: center;
@@ -115,12 +120,47 @@ nav{
 
 .cross{
     display: none;
+    width: 1.15vw;
+    height: 1.15vw;
 }
 
 .todo--item:hover .cross{    
     display: inline;
 }
 /* TodoItem styles end */
+
+/* Dashboard styles start */
+.dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh;
+    background-color: var(--bg-form-todolist-dashboard-dark-mode);
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--text-dashboard-dark-mode);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.dashboard p a{
+    opacity: 0.2;
+}
+
+.dashboard a{
+    margin-left: 1vw;
+    cursor: pointer;
+    transition: color ease-in-out 250ms;
+}
+
+.dashboard a:hover{
+    color: var(--text-hover-dashboard-dark-mode);
+}
+
+.dashboard a:active{
+    color: var(--text-active-dashboard-both-mode);
+}
+/* Dashboard styles end */
 
 
 /* Main styles end */
