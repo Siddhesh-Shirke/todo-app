@@ -9,6 +9,7 @@
 
 :root{
     font-family: 'Josefin Sans', sans-serif;
+    --border-radius: 3px;
     --bgcolor-dark-mode: hsl(235, 21%, 11%);
     --bgcolor-light-mode: hsl(0, 0%, 98%);
     --icon-both-node: hsl(0, 0%, 98%);
@@ -35,6 +36,7 @@ body{
     height: 100vh;
     background-image: url(./images/bg-desktop-dark.jpg);
     background-repeat: no-repeat;
+    background-size: 100% 41%;
     position: relative;
 }
 
@@ -56,37 +58,42 @@ nav{
 }
 
 .nav--title{
-    font-size: 5.25vh;
+    font-size: 2.25vw;
     font-weight: 700;
     letter-spacing: 1.25vw;
-    color: var(--text-form-todolist-dark-mode);
+    color: var(--icon-both-node);
 }
 
 .nav--mode--icon{
-    height: 3.5vh;
+    height: 1.75vw;
+    cursor: pointer;
+    transition: opacity ease-in-out 250ms;
+}
+
+.nav--mode--icon:hover{
+    opacity:  0.7;
 }
 /* Navbar styles end */
 
 /* Main styles start */
-
-/* input styles start */
+    /* input styles start */
 .main input{
+    font-family: 'Josefin Sans';
+    font-size: 1.25vw;
+    color: var(--text-form-todolist-dark-mode);
     width: 100%;
     padding: 2.5vh;
     border: 0;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     background-color: var(--bg-form-todolist-dashboard-dark-mode);
-    /* color: var(--text-form-todolist-dark-mode); */
-    letter-spacing: 0.225vh;
-    word-spacing: 0.25vw;
     margin-bottom: 3vh;
 }
-/* input styles end */
+    /* input styles end */
 
-/* TodoItem styles start */
+    /* TodoItem styles start */
 .main :nth-child(2){
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
 
 .todo--item{
@@ -109,27 +116,28 @@ nav{
     border-radius: 50%;
     border: 1px solid var(--text-hover-dashboard-light-mode);
     margin-right: 1vw;
+    cursor: pointer;
 }
 
 .todo--item--text{
     color: var(--text-form-todolist-dark-mode);
-    font-size: 2.5vh;
+    font-size: 1.25vw;
     font-weight: 400;
-    letter-spacing: 0.225vh;
 }
 
 .cross{
     display: none;
     width: 1.15vw;
     height: 1.15vw;
+    cursor: pointer;
 }
 
 .todo--item:hover .cross{    
     display: inline;
 }
-/* TodoItem styles end */
+    /* TodoItem styles end */
 
-/* Dashboard styles start */
+    /* Dashboard styles start */
 .dashboard{
     display: flex;
     align-items: center;
@@ -140,8 +148,8 @@ nav{
     font-size: 1vw;
     font-weight: 700;
     color: var(--text-dashboard-dark-mode);
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .dashboard p a{
@@ -161,17 +169,15 @@ nav{
 .dashboard a:active{
     color: var(--text-active-dashboard-both-mode);
 }
-/* Dashboard styles end */
+    /* Dashboard styles end */
 
-/* Note styles start */
+    /* Note styles start */
 .main--note{
     text-align: center;
     font-size: 1vw;
     color: var(--text-dashboard-dark-mode);
 }
-/* Note styles begin */
-
-
+    /* Note styles begin */
 /* Main styles end */
 
 

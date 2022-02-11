@@ -8,7 +8,7 @@ export default function Main(){
             <input type="text" 
                    placeholder="Create a new todo..."
                    name="" 
-                   value=""
+                // value="" Add it afterwards. Do not keep it empty.
             />
 
             {/* {TodoItem} */}
