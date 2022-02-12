@@ -2,9 +2,11 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import DashBoard from "./DashBoard"
 
-export default function Main(){
+export default function Main(props){
+    let mode = (props.mode === "dark") ? "" : "light"
     return(
-        <div className="main">
+        <main className={mode}>
+        
             <input type="text" 
                    placeholder="Create a new todo..."
                    name="" 
@@ -19,6 +21,6 @@ export default function Main(){
             <p className="main--note">
                 Drag and drop to reorder list
             </p>
-        </div>
+        </main>
     )
 }
