@@ -167,6 +167,30 @@ main :nth-child(2){
 }
     /* TodoItem styles end */
 
+    /* Empty list card styles start */
+.main--empty--list--card{
+    text-align: center;
+    padding: 2.5vh;
+    border-bottom: 1px solid var(--text-hover-dashboard-light-mode);
+    background-color: var(--bg-form-todolist-dashboard-dark-mode);
+}
+
+.light .main--empty--list--card{
+    background-color: var(--bgcolor-light-mode);
+    border-bottom: 1px solid var(--text-hover-dashboard-dark-mode);
+}
+
+.main--empty--list--card--text{
+    color: var(--text-form-todolist-dark-mode);
+    font-size: 1.25vw;
+    font-weight: 400;
+}
+
+.light .main--empty--list--card--text{
+    color: black;
+}
+    /* Empty list card styles end */
+
     /* Dashboard styles start */
 .dashboard{
     display: flex;
