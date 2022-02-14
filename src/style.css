@@ -98,8 +98,8 @@ input{
 }
 
 .light input{
-    background-color: var(--bg-form-todolist-dashboard-light-mode);
-    color: black;
+    background-color: var(--bgcolor-light-mode);
+    color:  var(--bg-form-todolist-dashboard-dark-mode);
 }
 
 
@@ -130,7 +130,7 @@ main :nth-child(2){
     align-items: center;
 }
 
-.todo--complete-check{
+.todo--complete--check{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,15 +139,16 @@ main :nth-child(2){
     border-radius: 50%;
     border: 1px solid var(--text-hover-dashboard-light-mode);
     margin-right: 1vw;
-    cursor: pointer;
-    transition: border ease-in-out 250ms;
-    
+    cursor: pointer; 
 }
 
-.todo--complete-check:hover{
-    border: 1px solid
-            linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+.light .todo--complete--check{
+    border: 1px solid var(--text-hover-dashboard-dark-mode);
 }
+
+/* .todo--complete--check:hover{
+    border: 1px solid linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+} */
 
 .todo--item--text{
     color: var(--text-form-todolist-dark-mode);
@@ -156,7 +157,7 @@ main :nth-child(2){
 }
 
 .light .todo--item--text{
-    color: black;
+    color: var(--text-hover-dashboard-light-mode);
 }
 
 .cross{

@@ -3,15 +3,22 @@ import check from "../images/icon-check.svg"
 import cross from "../images/icon-cross.svg"
 
 export default function TodoItem(props){
-    const styles = {
+    
+    const stylesStrikeText = {
         color: 'hsl(234, 11%, 52%)',
+    }
+
+    
+    const stylesCheckboxDivBg = {
+        background: props.isCompleted ? 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))' : 'transparent'
     }
 
     return(
         <>
             <div className="todo--item">
                 <div className="todo--item--info">
-                    <div className="todo--complete-check"
+                    <div className="todo--complete--check"
+                         style={stylesCheckboxDivBg}
                          lang={props.todoItemText}
                          onClick={(event) => props.taskCompleted(event)}
                     >
@@ -27,7 +34,7 @@ export default function TodoItem(props){
                         {
                             props.isCompleted
                             ?
-                            <s style={styles}>{props.todoItemText}</s>
+                            <s style={stylesStrikeText}>{props.todoItemText}</s>
                             :
                             props.todoItemText
                         }
