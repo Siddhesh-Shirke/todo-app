@@ -43,10 +43,20 @@ export default function Main(props){
         })
     }
 
+    function removeTask(event){
+        const value = event.target.lang;
+        setAllTodoListItems((prevAllTodoListItems) => {
+            return prevAllTodoListItems.filter((item) => {
+                return item.todoItemText != value
+            })
+        })
+    }
+
     const todoListElements = allTodoListItems.map((list) => {
         return <TodoItem key={list.todoItemText}
                          todoItemText={list.todoItemText}
                          taskCompleted={taskCompleted}
+                         removeTask={removeTask}
                          isCompleted={list.isCompleted}
                />
     })

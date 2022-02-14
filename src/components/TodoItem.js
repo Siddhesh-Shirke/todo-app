@@ -43,6 +43,7 @@ export default function TodoItem(props){
                 <img src={cross} 
                      className="cross" 
                      lang={props.todoItemText}
+                     onClick={(event) => props.removeTask(event)}
                      alt="todo item remover clickable"/>
             </div>
         </>
