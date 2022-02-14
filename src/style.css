@@ -131,6 +131,9 @@ main :nth-child(2){
 }
 
 .todo--complete-check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3vh;
     height: 3vh;
     border-radius: 50%;
@@ -138,6 +141,7 @@ main :nth-child(2){
     margin-right: 1vw;
     cursor: pointer;
     transition: border ease-in-out 250ms;
+    
 }
 
 .todo--complete-check:hover{

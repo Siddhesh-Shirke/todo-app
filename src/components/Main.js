@@ -30,12 +30,29 @@ export default function Main(props){
         })
     }
     
+    function taskCompleted(event){
+        const value = event.target.lang;
+        console.log(value)
+        setAllTodoListItems((prevAllTodoListItems) => {
+            return prevAllTodoListItems.map((item) => {
+                console.log(item.isCompleted)
+                return (item.todoItemText === value) 
+                       ? 
+                       {...item, isCompleted: !item.isCompleted} 
+                       : 
+                       item
+            })
+        })
+    }
+
     const todoListElements = allTodoListItems.map((list) => {
         return <TodoItem key={list.todoItemText}
                          todoItemText={list.todoItemText}
+                         taskCompleted={taskCompleted}
+                         isCompleted={list.isCompleted}
                />
     })
-    
+
     return(
         <main className={mode}>
             
