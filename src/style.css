@@ -192,7 +192,7 @@ main :nth-child(2){
 }
 
 .light .main--empty--list--card--text{
-    color: black;
+    color: var(--text-hover-dashboard-light-mode);
 }
     /* Empty list card styles end */
 

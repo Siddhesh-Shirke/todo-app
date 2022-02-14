@@ -1,9 +1,11 @@
 import React from "react"
 
-export default function DashBoard(){
+export default function DashBoard(props){
     return(
         <div className="dashboard">
-            <p className="dashboard--items--left">5 items left</p>
+            <p className="dashboard--items--left">
+                {props.itemsLeft} items left
+            </p>
             <div className="dashboard--sub">
                 <a className="dashboard-sub-btn">All</a>
                 <a className="dashboard-sub-btn">Active</a>

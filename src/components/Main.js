@@ -52,6 +52,18 @@ export default function Main(props){
         })
     }
 
+    function itemsLeft(){
+        let count = 0;
+        for(let i = 0; i < allTodoListItems.length; i++)
+        {
+            if(!allTodoListItems[i].isCompleted)
+            {
+                count = count + 1;
+            }
+        }
+        return count;
+    }
+
     const todoListElements = allTodoListItems.map((list) => {
         return <TodoItem key={list.todoItemText}
                          todoItemText={list.todoItemText}
@@ -87,8 +99,12 @@ export default function Main(props){
                     </p>
                 </div>
             } 
+
+
             
-            <DashBoard />
+            <DashBoard 
+                itemsLeft={itemsLeft()}
+            />
             <p className="main--note">
                 Drag and drop to reorder list
             </p>
