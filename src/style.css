@@ -28,6 +28,7 @@
     --text-note-light-mode: hsl(236, 9%, 61%);
 }
 
+
 /* body{
     background-color: var(--bgcolor-dark-mode);
 } */
@@ -223,18 +224,24 @@ main :nth-child(2){
     margin-left: 1vw;
     cursor: pointer;
     transition: color ease-in-out 250ms;
+    color: var(--text-dashboard-dark-mode);
+    text-decoration: none;
 }
 
 .dashboard a:hover{
     color: var(--text-hover-dashboard-dark-mode);
 }
 
-.light .dashboard a:hover{
-    color: var(--text-hover-dashboard-light-mode);
+.dashboard a:active{
+    color: var(--text-active-dashboard-both-mode)
 }
 
-.dashboard a:active{
+.dashboard a.active{
     color: var(--text-active-dashboard-both-mode);
+}
+
+.light .dashboard a:hover{
+    color: var(--text-hover-dashboard-light-mode);
 }
     /* Dashboard styles end */
 

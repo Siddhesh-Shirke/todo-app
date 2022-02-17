@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom"
 import TodoItem from "./TodoItem";
 import DashBoard from "./DashBoard"
 
@@ -7,11 +8,17 @@ export default function Main(props){
 
     const [todoItem, setTodoItem] = React.useState({
         isCompleted: false,
-        todoItemText: "",
-        isRemoved: false
+        todoItemText: ""
     })
 
     const [allTodoListItems, setAllTodoListItems] = React.useState([])
+
+    const [activeTask, setActiveTask] = React.useState({
+        isCompleted: false,
+        todoItemText: ""
+    })
+
+    const [completedTasks, setCompletedTasks] = React.useState([])
 
     function createTodoItem(event){
         const {name, value} = event.target
@@ -63,8 +70,29 @@ export default function Main(props){
         }
         return count;
     }
+    
+    function createActiveTask(){
+        setActiveTask(
+            allTodoListItems.find(item => item.isCompleted === false)
+        )
+    }
 
-    const todoListElements = allTodoListItems.map((list) => {
+    function createCompletedTasks(){
+        setCompletedTasks(allTodoListItems.filter((item) => {
+                return item.isCompleted
+            })
+        )
+    }
+
+    React.useEffect(() => {
+        createActiveTask()
+    }, [allTodoListItems])
+
+    React.useEffect(() => {
+        createCompletedTasks()
+    }, [allTodoListItems])
+    
+    const allTodoListElements = allTodoListItems.map((list) => {
         return <TodoItem key={list.todoItemText}
                          todoItemText={list.todoItemText}
                          taskCompleted={taskCompleted}
@@ -73,13 +101,37 @@ export default function Main(props){
                />
     })
 
+    const activeTodoListElement = 
+                                activeTask === undefined 
+                                ?
+                                <div className="main--empty--list--card">
+                                    <p className="main--empty--list--card--text">
+                                        No active task!
+                                    </p>
+                                </div>
+                                :
+                                <TodoItem 
+                                    todoItemText={activeTask.todoItemText}
+                                    taskCompleted={taskCompleted}
+                                    removeTask={removeTask}
+                                    isCompleted={activeTask.isCompleted}
+                                  />
+
+    const completedTodoListElements = completedTasks.map((item) => {
+            return <TodoItem key={item.todoItemText}
+                             todoItemText={item.todoItemText}
+                             taskCompleted={taskCompleted}
+                             removeTask={removeTask}
+                             isCompleted={item.isCompleted}
+                   />
+    })
+
     return(
         <main className={mode}>
             
             <form onSubmit={(event) =>{
                 addTodoItemToList(event,todoItem)
-            }}
-            >
+            }}>
                 <input type="text" 
                        placeholder="Create a new todo..."
                        name="todoItemText" 
@@ -88,23 +140,41 @@ export default function Main(props){
                 />
             </form>
 
-            {
-                allTodoListItems.length > 0 
-                ? 
-                todoListElements 
-                :
-                <div className="main--empty--list--card">
-                    <p className="main--empty--list--card--text">
-                        Nothing to do!
-                    </p>
-                </div>
-            } 
+            <Routes>
+                <Route path="/" 
+                       element={
+                           allTodoListItems.length <= 0
+                           ?
+                           <div className="main--empty--list--card">
+                               <p className="main--empty--list--card--text">
+                                   Nothing to do!
+                               </p>
+                           </div>
+                           :
+                           allTodoListElements
+                        } 
+                />
+                <Route path="active" 
+                       element={activeTodoListElement} />
+                       
+                <Route path="completed" 
+                       element={
+                            completedTodoListElements.length <= 0
+                            ?
+                            <div className="main--empty--list--card">
+                                <p className="main--empty--list--card--text">
+                                    No tasks completed!
+                                </p>
+                            </div>
+                            :
+                            completedTodoListElements} />
+            </Routes>
 
-
-            
-            <DashBoard 
-                itemsLeft={itemsLeft()}
+            <DashBoard itemsLeft={itemsLeft()}
+                       createActiveTask={createActiveTask}
+                       createCompletedTasks={createCompletedTasks}
             />
+                       
             <p className="main--note">
                 Drag and drop to reorder list
             </p>
