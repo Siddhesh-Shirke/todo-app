@@ -90,6 +90,14 @@ export default function Main(props){
         )
     }
 
+    function clearCompleted(){
+        setAllTodoListItems((prevState) => {
+            return prevState.filter((item) => {
+                return !item.isCompleted
+            })
+        })
+    }
+
     React.useEffect(() => {
         createActiveTask()
     }, [allTodoListItems])
@@ -181,6 +189,7 @@ export default function Main(props){
                        calcCompletedTasks={calcCompletedTasks()}
                        createActiveTask={createActiveTask}
                        createCompletedTasks={createCompletedTasks}
+                       clearCompleted={clearCompleted}
             />
                        
             <p className="main--note">
