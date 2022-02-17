@@ -71,6 +71,12 @@ export default function Main(props){
         return count;
     }
     
+    function calcCompletedTasks(){
+        let count = 0;
+        count = count + completedTasks.length
+        return count
+    }
+
     function createActiveTask(){
         setActiveTask(
             allTodoListItems.find(item => item.isCompleted === false)
@@ -154,6 +160,7 @@ export default function Main(props){
                            allTodoListElements
                         } 
                 />
+
                 <Route path="active" 
                        element={activeTodoListElement} />
                        
@@ -171,6 +178,7 @@ export default function Main(props){
             </Routes>
 
             <DashBoard itemsLeft={itemsLeft()}
+                       calcCompletedTasks={calcCompletedTasks()}
                        createActiveTask={createActiveTask}
                        createCompletedTasks={createCompletedTasks}
             />

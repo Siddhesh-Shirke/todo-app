@@ -1,39 +1,43 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, Routes, Route } from "react-router-dom"
 
 export default function DashBoard(props){
+    const allTodoItemsLeft = <p className="dashboard--items--left">
+                                {props.itemsLeft} items left&nbsp;&nbsp;
+                            </p>
+
+    const completedTodoItems = 
+                        <p className="dashboard--items--left">
+                            {props.calcCompletedTasks} tasks done
+                        </p>
+    
     return(
         <div className="dashboard">
-            <p className="dashboard--items--left">
-                {props.itemsLeft} items left
-            </p>
+
+            <Routes>
+                <Route path="/" element={allTodoItemsLeft} />
+                <Route path="/active" element={<p>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </p>} />
+                <Route path="/completed" element={completedTodoItems} />
+            </Routes>
+
             <div className="dashboard--sub">
-                {/* <a className="dashboard-sub-btn">
-                    All
-                </a>
-
-                <a  className="dashboard-sub-btn"
-                    onClick={props.createActiveTask}>
-                    Active
-                </a>
-
-                <a className="dashboard-sub-btn"
-                   onClick={props.createCompletedTasks}
-                >
-                    Completed
-                </a> */}
                 <NavLink to="/">All</NavLink>
 
                 <NavLink to="/active"
                          onClick={props.createActiveTask}>
                              Active
                 </NavLink>
-                
+
                 <NavLink to="/completed"
                          onClick={props.createCompletedTasks}>
                              Completed
                 </NavLink>
             </div>
+
             <a className="dashboard--empty--completed">
                 Clear Completed
             </a>
