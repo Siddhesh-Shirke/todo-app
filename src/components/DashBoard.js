@@ -12,36 +12,52 @@ export default function DashBoard(props){
                         </p>
     
     return(
-        <div className="dashboard">
+        <>
+            <div className="dashboard">
 
-            <Routes>
-                <Route path="/" element={allTodoItemsLeft} />
-                <Route path="/active" element={<p>
-                    
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Routes>
+                    <Route path="/" element={allTodoItemsLeft} />
+                    <Route path="/active" element={<p>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                </p>} />
-                <Route path="/completed" element={completedTodoItems} />
-            </Routes>
+                    </p>} />
+                    <Route path="/completed" element={completedTodoItems} />
+                </Routes>
 
-            <div className="dashboard--sub">
-                <NavLink to="/">All</NavLink>
+                <div className="dashboard--sub">
+                    <NavLink to="/">All</NavLink>
 
-                <NavLink to="/active"
-                         onClick={props.createActiveTask}>
-                             Active
-                </NavLink>
+                    <NavLink to="/active"
+                            onClick={props.createActiveTask}>
+                                Active
+                    </NavLink>
 
-                <NavLink to="/completed"
-                         onClick={props.createCompletedTasks}>
-                             Completed
-                </NavLink>
+                    <NavLink to="/completed"
+                            onClick={props.createCompletedTasks}>
+                                Completed
+                    </NavLink>
+                </div>
+
+                <a className="dashboard--empty--completed"
+                onClick={props.clearCompleted}>
+                    Clear Completed
+                </a>
             </div>
 
-            <a className="dashboard--empty--completed"
-               onClick={props.clearCompleted}>
-                Clear Completed
-            </a>
-        </div>
+            <div className="mobile--dashboard--sub">
+                    <NavLink to="/">All</NavLink>
+
+                    <NavLink to="/active"
+                            onClick={props.createActiveTask}>
+                                Active
+                    </NavLink>
+
+                    <NavLink to="/completed"
+                            onClick={props.createCompletedTasks}>
+                                Completed
+                    </NavLink>
+            </div>
+        </>
     )
 }

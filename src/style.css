@@ -47,7 +47,7 @@
     background-repeat: no-repeat;
     background-size: 100% 41%;
     background-color: var(--bgcolor-dark-mode);
-}
+} 
 
 .container{
     position: absolute;
@@ -81,7 +81,7 @@ nav{
 
 .nav--mode--icon:hover{
     opacity:  0.7;
-}
+} 
 /* Navbar styles end */
 
 /* Main styles start */
@@ -253,6 +253,212 @@ main :nth-child(2){
 }
     /* Note styles begin */
 /* Main styles end */
+
+/* Breakpoints start */
+    /* Mobile Phones */
+    @media(max-width: 600px){
+        /* Basic styles start*/
+        .app{
+            background-image: url(./images/bg-mobile-dark.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 30%;
+            background-color: var(--bgcolor-dark-mode);
+        }
+
+        .light .app{
+            background-image: url(./images/bg-mobile-light.jpg);
+        }
+
+        .container{
+            position: absolute;
+            top: 5%;
+            left: 41%;
+            transform: translateX(-40%);
+            width: 90%;
+        }
+        /* Basic styles end*/
+
+        /* Navbar styles start */
+        .nav--title{
+            font-size: 7.5vw;
+            font-weight: 700;
+            letter-spacing: 3.5vw;
+            color: var(--icon-both-node);
+        }
+
+        .nav--mode--icon{
+            height: 6vw;
+            cursor: pointer;
+        }
+
+        .nav--mode--icon:hover{
+            opacity:  1;
+        } 
+        /* Navbar styles end*/
+
+        /* Main styles start*/
+            /* Input styles start */
+            input{
+                font-family: 'Josefin Sans';
+                font-size: 4vw;
+                color: var(--text-form-todolist-dark-mode);
+                width: 100%;
+                padding: 3vh;
+                border: 0;
+                border-radius: var(--border-radius);
+                background-color: var(--bg-form-todolist-dashboard-dark-mode);
+                margin-bottom: 3vh;
+            }
+            
+            /* Input styles end */
+
+            /* TodoItem styles start */
+            .todo--item{
+                padding: 3vh;
+                position: relative;
+            }
+
+            .todo--complete--check{
+                margin-right: 3vw;
+                cursor: pointer; 
+            }
+
+            .todo--item--text{
+                position: absolute;
+                font-size: 4vw;
+                top: 40%;
+                left: 15%;
+            }
+
+            .cross{
+                display: block;
+                width: 4vw;
+                height: 4vw;
+                cursor: pointer;
+            }
+            /* TodoItem styles end*/
+
+            /* Empty list card styles start */
+            .main--empty--list--card{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 3.4vh;
+            }
+
+            .main--empty--list--card--text{
+                font-size: 4vw;
+            }
+            /* Empty list card styles end */
+
+            /* Dashboard styles start */
+            .dashboard{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 3.5vh;
+                background-color: var(--bg-form-todolist-dashboard-dark-mode);
+                font-size: 4vw;
+                font-weight: 700;
+                color: var(--text-dashboard-dark-mode);
+                border-bottom-left-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius); 
+            }
+
+            .dashboard a:hover{
+                color: var(--text-dashboard-dark-mode);
+            }
+
+            .dashboard a:active{
+                color: var(--text-active-dashboard-both-mode)
+            }
+
+            .light .dashboard a:hover{
+                color: var(--text-dashboard-dark-mode);
+            }
+
+            .light .dashboard a:active{
+                color: var(--text-active-dashboard-both-mode)
+            }
+
+            .dashboard--sub{
+                display: none;
+            }
+
+            .mobile--dashboard--sub{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                padding: 3.5vh;
+                margin-bottom: 6.5vh;
+                background-color: var(--bg-form-todolist-dashboard-dark-mode);
+                font-size: 1vw;
+                font-weight: 700;
+                color: var(--text-dashboard-dark-mode);
+                border-bottom-left-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius);
+            }
+
+            .light .mobile--dashboard--sub{
+                background-color: var(--bg-form-todolist-dashboard-light-mode);
+            }
+
+            .mobile--dashboard--sub a{
+                font-size: 4vw;
+                cursor: pointer;
+                color: var(--text-dashboard-dark-mode);
+                text-decoration: none;
+                transition: color ease-in-out 250ms;
+            }
+
+            .mobile--dashboard--sub a.active{
+                color: var(--text-active-dashboard-both-mode);
+            }
+            /* Dashboard styles end */
+
+            /* Note styles start */
+            .main--note{
+                text-align: center;
+                font-size: 3.5vw;
+                color: var(--text-dashboard-dark-mode);
+            }
+            /* Note styles begin */
+        /* Main styles end*/
+    }    
+    /* Mobile Phones */
+
+
+
+    /* Tablet Portrait */
+    @media(max-width: 900px){
+
+    }
+    /* Tablet Portrait */
+
+
+
+    /* Tablet Landscape */
+    @media(max-width: 1200px){
+
+    }
+    /* Tablet Landscape */
+
+
+
+    /* Desktop */
+    @media(max-width: 1800px){
+
+    }
+    /* Desktop*/
+
+
+
+    /* Big Monitors */
+    @media(min-width: 1800px){
+
+    }
+    /* Big Monitors */
+/* Breakpoints end */
 
 
 
