@@ -11,7 +11,12 @@ export default function Main(props){
         todoItemText: ""
     })
 
-    const [allTodoListItems, setAllTodoListItems] = React.useState([])
+    const [allTodoListItems, setAllTodoListItems] = React.useState( () => JSON.parse(localStorage.getItem("allTaskList")) || []
+    )
+
+    React.useEffect(() => {
+        localStorage.setItem("allTaskList", JSON.stringify(allTodoListItems))
+    }, [allTodoListItems])
 
     const [activeTask, setActiveTask] = React.useState({
         isCompleted: false,
@@ -32,6 +37,10 @@ export default function Main(props){
 
     function addTodoItemToList(event, todoItem){
         event.preventDefault()
+        todoItem.todoItemText === ""
+        ?
+        console.log(".")
+        :
         setAllTodoListItems((prevTodoList) => {
             return [...prevTodoList, todoItem]
         })
