@@ -115,8 +115,9 @@ export default function Main(props){
         createCompletedTasks()
     }, [allTodoListItems])
     
-    const allTodoListElements = allTodoListItems.map((list) => {
+    const allTodoListElements = allTodoListItems.map((list, index) => {
         return <TodoItem key={list.todoItemText}
+                         index={index}
                          todoItemText={list.todoItemText}
                          taskCompleted={taskCompleted}
                          removeTask={removeTask}
@@ -174,7 +175,9 @@ export default function Main(props){
                                </p>
                            </div>
                            :
-                           allTodoListElements
+                            <div className="all--todos--list">
+                                {allTodoListElements}
+                            </div>
                         } 
                 />
 

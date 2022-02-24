@@ -14,20 +14,20 @@ export default function TodoItem(props){
     }
 
     return(
-        <>
+        <>      
             <div className="todo--item">
                 <div className="todo--item--info">
                     <div className="todo--complete--check"
-                         style={stylesCheckboxDivBg}
-                         lang={props.todoItemText}
-                         onClick={(event) => props.taskCompleted(event)}
+                        style={stylesCheckboxDivBg}
+                        lang={props.todoItemText}
+                        onClick={(event) => props.taskCompleted(event)}
                     >
                         {
                             props.isCompleted 
                             && 
                             <img src={check} 
-                                 lang={props.todoItemText}
-                                 alt="todo item remover clickable"/>
+                                lang={props.todoItemText}
+                                alt="todo item remover clickable"/>
                         }
                     </div>
                     <p className="todo--item--text">
@@ -41,11 +41,11 @@ export default function TodoItem(props){
                     </p>
                 </div>
                 <img src={cross} 
-                     className="cross" 
-                     lang={props.todoItemText}
-                     onClick={(event) => props.removeTask(event)}
-                     alt="todo item remover clickable"/>
-            </div>
+                    className="cross" 
+                    lang={props.todoItemText}
+                    onClick={(event) => props.removeTask(event)}
+                    alt="todo item remover clickable"/>
+            </div>   
         </>
     )
 }
