@@ -205,7 +205,7 @@ export default function Main(props){
             />
                        
             <p className="main--note">
-                Drag and drop to reorder list
+                Drag and drop feature coming soon!
             </p>
         </main>
     )
