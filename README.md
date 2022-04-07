@@ -1,3 +1,16 @@
+# Todo App
+The above project is a Frontend Mentor Challenge.
+
+## Completed Features
+  - Responsiveness, Optimal layout for Mobile Phones, Tablets(Landscape & Portrait) and Desktops.
+  - Both Light and Dark Mode available.
+  - All CRUD operations available.
+  - All/Active/Complete filters available.
+  - A dedicated button to clear all completed todos.
+
+## Features Coming soon
+  - Drag and drop to reorder items on the list.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
