@@ -39,7 +39,7 @@ export default function DashBoard(props){
                     </NavLink>
                 </div>
 
-                <a className="dashboard--empty--completed" href="#"
+                <a className="dashboard--empty--completed" 
                 onClick={props.clearCompleted}>
                     Clear Completed
                 </a>
