@@ -63,7 +63,7 @@ export default function Main(props){
         const value = event.target.lang;
         setAllTodoListItems((prevAllTodoListItems) => {
             return prevAllTodoListItems.filter((item) => {
-                return item.todoItemText != value
+                return item.todoItemText !== value
             })
         })
     }
@@ -109,11 +109,11 @@ export default function Main(props){
 
     React.useEffect(() => {
         createActiveTask()
-    }, [allTodoListItems])
+    })
 
     React.useEffect(() => {
         createCompletedTasks()
-    }, [allTodoListItems])
+    })
     
     const allTodoListElements = allTodoListItems.map((list, index) => {
         return <TodoItem key={list.todoItemText}
